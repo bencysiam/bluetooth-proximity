@@ -1,7 +1,5 @@
-#!/usr/bin/python3
-
 #
-#  Using RSSI code from here...
+#  Code from here...
 #  https://github.com/FrederikBolding/bluetooth-proximity
 #  which uses code from
 #  https://github.com/ewenchou/bluetooth-proximity
@@ -115,11 +113,12 @@ def perform_follow(btaddr):
                 inRange = False
                 print("[-] Device has gone out of range or been switched off!")
             else:
-                print("  - RSSI = " + str(myrssi) + "dB")
+                print("  - RSSI = " + str(myrssi[0]) + "dB     ", end='\r')
         else:
             if(myrssi != None):
                 inRange = True
-                print("[+] Device is now in range!\n  - RSSI = " + str(myrssi) + "dB")
+                print("[+] Device is now in range!")
+                print("  - RSSI = " + str(myrssi[0]) + "dB     ", end='\r')
                 
         time.sleep(1)
 
