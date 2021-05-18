@@ -19,19 +19,19 @@ sudo pip3 install bluepy
 
 ```
 Usage:
-  ./classicprox.py -h or --help = print this help
-  ./classicprox.py -s = scan for Bluetooth IDs
-  ./classicprox.py -s 10 = scan for Bluetooth IDs for 10 seconds
-  ./classicprox.py -f xx:xx:xx:xx = continuously scan for this device
+  ./btclassic-prox.py -h or --help = print this help
+  ./btclassic-prox.py -s = scan for Bluetooth IDs
+  ./btclassic-prox.py -s 10 = scan for Bluetooth IDs for 10 seconds
+  ./btclassic-prox.py -f xx:xx:xx:xx = continuously scan for this device
 ```
 
 ### BLE
 
 ```
 Usage:
-  ./bleprox.py -h or --help = print this help
-  ./bleprox.py -s = scan for Bluetooth IDs
-  ./bleprox.py -s 10 = scan for Bluetooth IDs for 10 seconds
-  ./bleprox.py -f xx:xx:xx:xx = continuously scan for this device
+  ./ble-prox.py -h or --help = print this help
+  ./ble-prox.py -s = scan for Bluetooth IDs
+  ./ble-prox.py -s 10 = scan for Bluetooth IDs for 10 seconds
+  ./ble-prox.py -f xx:xx:xx:xx = continuously scan for this device
 
 ```
