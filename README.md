@@ -2,6 +2,8 @@
 
 Some basic python3 PoC code to scan for nearby devices and 'follow' a device given a specific device address. This will identify when that device is in or out of range and show on screen an updating RSSI giving an indication as to how far away that device is.
 
+This has only been tested using a Raspberry Pi 4B with internal Bluetooth chip running Raspbian.
+
 ## There are some dependencies!
 
 Make sure you have python 3 and pip working first off, then install the dependencies...
