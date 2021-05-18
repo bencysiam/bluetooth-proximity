@@ -1,9 +1,5 @@
-#
-#  Code from here...
-#  https://github.com/FrederikBolding/bluetooth-proximity
-#  which uses code from
-#  https://github.com/ewenchou/bluetooth-proximity
-#
+#!/usr/bin/python3
+
 import time
 import sys
 import bluetooth
@@ -40,7 +36,7 @@ class BluetoothRSSI(object):
         # Connecting via PSM 1 - Service Discovery
         self.bt_sock.connect_ex((self.addr, 1))
         self.connected = True
-    
+
     def close(self):
         """Close the bluetooth socket."""
         self.bt_sock.close()
@@ -85,7 +81,7 @@ def print_help():
 
 def perform_scan(scantime):
     nearby_devices = bluetooth.discover_devices(duration=scantime, lookup_names=True)
-    
+
     if(len(nearby_devices) > 0):
         print("[+] Found " + str(len(nearby_devices)) + " devices in range!")
         for (dev_addr,readable_name) in nearby_devices:
@@ -96,7 +92,7 @@ def perform_scan(scantime):
 def perform_follow(btaddr):
     print("[*] Following " + btaddr)
     btrssi = BluetoothRSSI(addr=btaddr)
-    
+
     myrssi = btrssi.request_rssi()
     if(myrssi == None):
         print("[-] Device is out of range or switched off!")
@@ -107,7 +103,7 @@ def perform_follow(btaddr):
 
     while(True):
         myrssi = btrssi.request_rssi()
-        
+
         if(inRange == True):
             if(myrssi == None):
                 inRange = False
@@ -119,7 +115,7 @@ def perform_follow(btaddr):
                 inRange = True
                 print("[+] Device is now in range!")
                 print("  - RSSI = " + str(myrssi[0]) + "dB     ", end='\r')
-                
+
         time.sleep(1)
 
 if(len(sys.argv) == 1):
